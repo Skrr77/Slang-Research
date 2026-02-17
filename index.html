@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital-Til: Толық жоба</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page { display: none; }
+        .active-page { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .nav-link.active { border-bottom: 2px solid #4f46e5; color: #4f46e5; font-weight: bold; }
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(5px); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
+            <div class="font-bold text-xl text-indigo-600 tracking-tighter uppercase italic">Digital-Til</div>
+            <div class="hidden md:flex space-x-6 text-sm">
+                <button onclick="showPage('home')" class="nav-link py-2 active" id="btn-home">Басты бет</button>
+                <button onclick="showPage('details')" class="nav-link py-2" id="btn-details">Жоба туралы</button>
+                <button onclick="showPage('research')" class="nav-link py-2" id="btn-research">Зерттеу</button>
+                <button onclick="showPage('quiz')" class="nav-link py-2" id="btn-quiz">Квиз-тест</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="page active-page">
+        <header class="bg-gradient-to-r from-indigo-900 via-indigo-800 to-blue-900 text-white py-20 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-black mb-10 leading-tight">Қазіргі жастардың тіліне интернет-сленгтердің әсері</h1>
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <span class="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">Орындаған: Құлбеков Д., Алинур Е.</span>
+                    <span class="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">Ғылыми жетекші: Камиева Г.К.</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="max-w-5xl mx-auto py-16 px-4">
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="text-2xl font-bold text-indigo-900 mb-4 border-l-4 border-indigo-600 pl-4">Жұмыстың өзектілігі</h2>
+                    <p class="text-gray-700 leading-relaxed text-justify">Қазіргі таңда жастар арасындағы интернет-коммуникация тек ақпарат алмасу құралы ғана емес, жаңа тілдік мәдениеттің қалыптасу ортасына айналды. Смартфондар мен мессенджерлердің күнделікті қолданысқа енуі тілдің транформациялануына әкелді.</p>
+                </div>
+                <div class="bg-indigo-50 p-8 rounded-3xl border border-indigo-100">
+                    <h2 class="text-2xl font-bold text-indigo-900 mb-4">Ғылыми жаңашылдығы</h2>
+                    <p class="text-gray-700 leading-relaxed italic">"Бұл зерттеуде алғаш рет қазақстандық жастардың цифрлық кеңістіктегі тілдік кодын шешуге талпыныс жасалды. Біз сленгтердің тек «тілді бұзушы» емес, «функционалды үнемдеу» құралы екенін дәлелдейміз."</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="p-6">
+                    <div class="w-16 h-16 bg-indigo-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-bullseye text-2xl"></i></div>
+                    <h3 class="font-bold mb-2">Зерттеу мақсаты</h3>
+                    <p class="text-sm text-gray-500 text-center">Интернет-сленгтердің табиғатын ашу және жастар сөйлеуіне әсерін бағалау.</p>
+                </div>
+                <div class="p-6">
+                    <div class="w-16 h-16 bg-blue-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-tasks text-2xl"></i></div>
+                    <h3 class="font-bold mb-2">Зерттеу міндеттері</h3>
+                    <p class="text-sm text-gray-500 text-center">Сленгтердің жіктелуін жасау, сауалнама жүргізу және талдау нәтижесін шығару.</p>
+                </div>
+                <div class="p-6">
+                    <div class="w-16 h-16 bg-purple-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-search text-2xl"></i></div>
+                    <h3 class="font-bold mb-2">Зерттеу нысаны</h3>
+                    <p class="text-sm text-gray-500 text-center">Әлеуметтік желілердегі жастардың жазбаша және ауызша коммуникациясы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="page py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-black mb-10 text-indigo-900">Жобаның ғылыми негіздемесі</h2>
+            
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 mb-10">
+                <h3 class="text-2xl font-bold mb-4 flex items-center text-indigo-600"><i class="fas fa-file-alt mr-3"></i> Аңдатпа</h3>
+                <p class="text-gray-700 leading-relaxed text-justify">Ғылыми жобада қазіргі жастар тіліндегі интернет-сленгтердің тілдік табиғаты, олардың құрылымдық түрлері мен қолданыс ерекшеліктері талданады. Зерттеу барысында әлеуметтік желілердегі бейресми, қысқартылған және кірме сөздердің қызметі қарастырылады.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div class="bg-indigo-600 text-white p-8 rounded-3xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-microscope mr-3"></i> Зерттеу әдістері</h3>
+                    <ul class="space-y-3 opacity-90 text-sm">
+                        <li>• Салыстырмалы-салғастырмалы талдау;</li>
+                        <li>• Статистикалық мәліметтерді жинақтау;</li>
+                        <li>• Әлеуметтік онлайн-сауалнама жүргізу;</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-bold mb-4 text-indigo-900 flex items-center"><i class="fas fa-book mr-3"></i> Теориялық база</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed italic">Жұмыс барысында Р. Сыздықованың тілдік норма туралы ілімдеріне және Д. Кристалдың интернет-лингвистика саласындағы зерттеулеріне сүйеніп жасалды.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition border-b-4 border-indigo-500">
+                    <h3 class="font-bold text-xl mb-3">Технология</h3>
+                    <p class="text-gray-600 text-sm mb-4">Жаңа арналардың тілдік нормаға әсері.</p>
+                    <button onclick="openModal('tech')" class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase">Ашу</button>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition border-b-4 border-purple-500">
+                    <h3 class="font-bold text-xl mb-3">Тілдік үнем</h3>
+                    <p class="text-gray-600 text-sm mb-4">Уақытты үнемдеу үшін сөздерді қысқарту.</p>
+                    <button onclick="openModal('economy')" class="bg-purple-600 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase">Ашу</button>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition border-b-4 border-emerald-500">
+                    <h3 class="font-bold text-xl mb-3">Мәдениет</h3>
+                    <p class="text-gray-600 text-sm mb-4">Сленг жастардың өзін-өзі таныту құралы.</p>
+                    <button onclick="openModal('impact')" class="bg-emerald-600 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase">Ашу</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="page py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center text-indigo-900">Тәжірибелік бөлім: Сауалнама және Талдау</h2>
+            <div class="bg-slate-900 text-white p-8 rounded-[2rem] shadow-2xl mb-12">
+                <h3 class="text-xl font-bold mb-6 text-indigo-400 italic">Сленг сөздігі: Іздеу</h3>
+                <input type="text" id="slangSearch" onkeyup="searchSlang()" placeholder="Сөзді енгізіңіз..." class="w-full p-4 rounded-xl text-slate-900 outline-none">
+                <div id="slangResults" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-indigo-600">
+                    <p class="text-4xl font-black text-indigo-600 mb-2">80.6%</p>
+                    <p class="text-sm font-medium text-slate-600">Жастар сленгті достарымен қолданады</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-blue-500">
+                    <p class="text-4xl font-black text-blue-500 mb-2">72.2%</p>
+                    <p class="text-sm font-medium text-slate-600">Сленгті ақпаратты тез жеткізу үшін пайдаланады</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-purple-500">
+                    <p class="text-4xl font-black text-purple-500 mb-2">63.9%</p>
+                    <p class="text-sm font-medium text-slate-600">Ресми ортада сленг қолдануға болмайды дейді</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-emerald-500">
+                    <p class="text-4xl font-black text-emerald-500 mb-2">36</p>
+                    <p class="text-sm font-medium text-slate-600">Сауалнамаға қатысқан респонденттер</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="page py-16 px-4">
+        <div class="max-w-xl mx-auto bg-white p-12 rounded-[2.5rem] shadow-2xl relative">
+            <div id="quiz-content">
+                <h2 class="text-2xl font-bold mb-8 text-indigo-900 text-center">Сленгті қаншалықты білесіз?</h2>
+                <div id="question" class="text-xl mb-10 font-semibold text-slate-800 text-center"></div>
+                <div id="options" class="space-y-4"></div>
+            </div>
+            <div id="result" class="hidden text-center py-10">
+                <h3 class="text-4xl font-black mb-4 text-indigo-600">Дайын!</h3>
+                <p id="scoreText" class="text-lg text-slate-500 mb-10"></p>
+                <button onclick="location.reload()" class="bg-indigo-600 text-white px-12 py-4 rounded-2xl font-bold">Қайта бастау</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="infoModal" class="modal">
+        <div class="bg-white m-auto mt-24 p-12 rounded-[2.5rem] max-w-xl relative shadow-2xl border border-white/50">
+            <button onclick="closeModal()" class="absolute top-8 right-8 text-4xl text-slate-200 hover:text-indigo-600 transition">&times;</button>
+            <h2 id="modalTitle" class="text-3xl font-bold mb-6 text-indigo-900 pr-8"></h2>
+            <p id="modalBody" class="text-slate-600 leading-relaxed text-lg text-justify"></p>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active-page');
+            document.getElementById('btn-' + pageId).classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        const slangs = [
+            {word: "Краш", mean: "Ұнатып қалған адамыңыз"},
+            {word: "Вайб", mean: "Ортаның атмосферасы мен көңіл-күйі"},
+            {word: "Пруф", mean: "Дәлел (ағылш. proof)"},
+            {word: "Кринж", mean: "Ұялу немесе ыңғайсыздық сезімі"},
+            {word: "Слсм", mean: "Сәлем сөзінің қысқартылған түрі"}
+        ];
+
+        function searchSlang() {
+            const input = document.getElementById('slangSearch').value.toLowerCase();
+            const container = document.getElementById('slangResults');
+            container.innerHTML = '';
+            if(input.length < 1) return;
+            slangs.filter(s => s.word.toLowerCase().includes(input)).forEach(s => {
+                container.innerHTML += `<div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 font-medium"># ${s.word}: <span class="text-indigo-300 ml-2 font-normal">${s.mean}</span></div>`;
+            });
+        }
+
+        const infoData = {
+            tech: { title: "Технологиялық фактор", body: "Смартфондар мен жылдам интернеттің пайда болуы тілдік нормаларды жеңілдетті. WhatsApp, Telegram, TikTok сияқты платформаларда уақытты үнемдеу маңызды." },
+            economy: { title: "Тілдік үнем принципі", body: "Жастар ұзын сөйлемдерді барынша қысқартып, ақпаратты аз ғана белгілермен (эмодзилер, акронимдер) жеткізуді жөн көреді." },
+            impact: { title: "Мәдени бірегейлік", body: "Сленг жастарға «өз ортасын» қалыптастыруға көмектеседі. Бұл тек сөйлеу мәнері емес, белгілі бір топқа тиесілі екенін көрсететін код." }
+        };
+
+        function openModal(key) {
+            document.getElementById('modalTitle').innerText = infoData[key].title;
+            document.getElementById('modalBody').innerText = infoData[key].body;
+            document.getElementById('infoModal').style.display = 'flex';
+        }
+        function closeModal() { document.getElementById('infoModal').style.display = 'none'; }
+
+        const questions = [
+            { q: "Сауалнама бойынша неше пайыз жас сленгті достарымен қолданады?", a: ["50.1%", "80.6%", "100%"], correct: 1 },
+            { q: "Интернет-сленгтің пайда болуының басты себебі?", a: ["Тілдік үнемдеу", "Тілді бұзу ниеті", "Ағылшын тілін білмеу"], correct: 0 }
+        ];
+        let currentQ = 0, score = 0;
+        function loadQuestion() {
+            const q = questions[currentQ];
+            document.getElementById('question').innerText = q.q;
+            const optDiv = document.getElementById('options');
+            optDiv.innerHTML = '';
+            q.a.forEach((opt, i) => {
+                optDiv.innerHTML += `<button onclick="ans(${i})" class="w-full text-center p-5 rounded-2xl border-2 border-slate-100 hover:border-indigo-600 hover:bg-indigo-50 transition-all font-medium text-slate-700 shadow-sm">${opt}</button>`;
+            });
+        }
+        function ans(i) {
+            if(i === questions[currentQ].correct) score++;
+            if(currentQ < questions.length - 1) { currentQ++; loadQuestion(); }
+            else {
+                document.getElementById('quiz-content').classList.add('hidden');
+                document.getElementById('result').classList.remove('hidden');
+                document.getElementById('scoreText').innerText = `Сіз ${questions.length} сұрақтың ${score}-не дұрыс жауап бердіңіз!`;
+            }
+        }
+        loadQuestion();
+    </script>
+</body>
+</html>
